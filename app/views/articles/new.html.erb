@@ -1,11 +1,11 @@
 <h1 class="text-center">Create a new Article!</h1>
 
-<%if @article.errors.any? %>
-    <h2>The Following errors prevented the Article from getting created!</h2>
+<% if @article.errors.any?%>
+    <h3 class="alert alert-danger">The following Errors stopped the Article to be created!</h3>
     <ul>
-        <% @article.errors.full_messages.each do |msg|%>
-            <li><%= msg%></li>
-        <% end %>
+        <% @article.errors.full_messages.each do|msg|%>
+        <li><%=msg%></li>
+        <% end%>
     </ul>
 <% end %>
 

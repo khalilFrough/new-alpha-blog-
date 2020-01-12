@@ -4,19 +4,21 @@ class ArticlesController < ApplicationController
         @article = Article.new
     end  
 
+    # showing the Article created
+    def show
+        @article= Article.find(params[:id])
+    end 
+
+
     # creating an Article 
     def create
         @article = Article.new(article_params)
         if  @article.save
-            flash[:notice]="A New Article was created!"
+            flash[:notice]= "A New Article was created!"
             redirect_to article_path(@article)
         else
             render 'new'
         end 
-    end 
-    # showing the Articles 
-    def show
-        @article= Article.find(params[:id])
     end 
 
     private
