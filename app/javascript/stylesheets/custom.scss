@@ -1,0 +1,53 @@
+:root{
+    --primary-color:rgb(161, 10, 10);
+    --secondary-color: rgb(0, 119, 155);
+}
+
+.navbar.navbar-expand-lg{
+    background-color:var(--primary-color) !important;
+}
+#logo{
+    text-transform: uppercase;
+    float: left;
+    font-size: 1.7em;
+    color:white;
+    letter-spacing: -1px;
+    font-weight: bold;
+}
+#logo:hover{
+    color:#fff;
+    text-decoration: none;
+}
+.center{
+    text-align: center;
+}
+.jumbotron{
+   margin-top: 1rem;
+    background-image: url(../../assets/images/bg.jpg);
+    background-size: cover;
+    height: 80vh;
+}
+.jumbotron h1{
+    color:var(--secondary-color);
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: -1;
+}
+
+.footer{
+    margin-top: 5rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #aaaa;
+
+}
+.footer small{
+    float:left;
+}
+.footer nav{
+    float: right;
+   
+}
+.footer li{
+    list-style: none;
+    margin-right: 5rem;
+}
