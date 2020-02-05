@@ -1,0 +1,42 @@
+<h1 align="center"> Welcome to Alpha-blog </h1>
+<%=render 'shared/errors', obj: @user%>
+
+<div class= "row">
+    <div class="col-md-12">
+        <%= form_for @user do |f| %>
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"><%= f.label :username%></div>
+            <div class="col-sm-8">
+              <%= f.text_field :username, class: "form-control", placeholder: "Username", autuofocus: true%>
+            </div>
+          </div> 
+
+      <!--second--> 
+          <div class="form-group row">
+              <div class="col-sm-2 col-form-label"><%= f.label :email%></div>
+            <div class="col-sm-8">
+              <%= f.email_field :email, class: "form-control", placeholder: "Enter email", autuofocus: true%>
+            </div>
+          </div> 
+      <!--end of second--> 
+      <!--thrid--> 
+        <div class="form-group row">
+            <div class="col-sm-2 col-form-label"><%= f.label :password%></div>
+          <div class="col-sm-8">
+            <%= f.password_field :password, class: "form-control", placeholder: "Enter password", autuofocus: true%>
+          </div>
+        </div> 
+        <!--end of third--> 
+            <br>
+            <div class="form-group row">
+            <div class="col-sm-12 center">
+                <%= f.submit "Sign up", class:"btn btn-primary btn-lg"%>
+            </div>
+        </div>
+
+        <% end %>    
+        <div class=" center col-xs-4 col-xs-offset-4">
+            [ <%= link_to "Cancel request and return to articles listing", articles_path%> ]
+        </div>
+    </div>
+</div>
