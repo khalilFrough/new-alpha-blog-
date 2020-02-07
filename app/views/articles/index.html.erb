@@ -1,3 +1,9 @@
 <h1 align="center">Showing All Articles!</h1>
-
+<div class="pagination-wrapper">
+    <%= will_paginate @article%>
+</div>
 <%= render 'article', obj: @article%>
+
+<div class="pagination-wrapper">
+    <%= will_paginate @article%>
+</div>

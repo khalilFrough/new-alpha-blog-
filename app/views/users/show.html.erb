@@ -5,5 +5,12 @@
     </div>
 </div>    
 
-<h4 align="center"> <%= @user.username%>'s Articles<h4>
-<%= render 'articles/article', obj:@user.articles%>
+<h6 align="center"> <%= @user.username%>'s Articles<h6>
+<div class="pagination-wrapper">
+    <%= will_paginate @user_articles%>
+</div>
+<%= render 'articles/article', obj:@user_articles%>
+
+<div class="pagination-wrapper">
+    <%= will_paginate @user_articles%>
+</div>
