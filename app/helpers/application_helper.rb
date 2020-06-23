@@ -6,12 +6,7 @@ module ApplicationHelper
         image_tag(gravatar_url, alt: user.username, class: "img-circle")
     end 
 
-    def current_user
-        @current_user ||= User.find(session[:user_id]) if session[:user_id] 
-    end 
+  
 
-    def logged_in?
-        !!current_user
-        # in rails !! means you are turing a method to boolean
-    end 
+   
 end
