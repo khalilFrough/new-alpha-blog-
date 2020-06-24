@@ -21,7 +21,7 @@ class UsersController < ApplicationController
         end
     end 
 
-    def destroy
+    def 
         @user.destroy
         session[:user_id] = nil
         flash[:notice] = "Account and the Articles assocated were deleted"
