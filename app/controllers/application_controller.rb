@@ -8,4 +8,11 @@ class ApplicationController < ActionController::Base
         !!current_user
         # in rails !! means you are turing a method to boolean
     end 
+
+    def require_user
+        if !logged_in?
+            flash[:danger] = "You must logged in to perform that action"
+            redirect_to login_path
+        end 
+    end 
 end
