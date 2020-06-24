@@ -17,7 +17,9 @@
           Actions
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        <%if logged_in?%>
           <%= link_to "New Artilce", new_article_path, class: "dropdown-item"%>
+        <%end%>
           <a class="dropdown-item" href="#"><%=link_to "All Users", users_path, class: "dropdown-item"%></a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Something else here</a>
@@ -30,9 +32,15 @@
           <li class="nav-item">
             <%=link_to 'Logout', logout_path, method:  :delete, class: "nav-link"%>
           </li>
-          <li class="nav-item">
-            <%=link_to current_user.username, user_path(current_user), class: "nav-link"%>
-          </li>
+          <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <%=current_user.username%>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <%= link_to "View Profile", user_path(current_user), class: "dropdown-item"%>
+          <%= link_to "Edit Profile", edit_user_path(current_user), class: "dropdown-item"%>
+        </div>
+      </li> <!-- end of dropdown-->
         </ul>
         <%else%>
         <li class="nav-item">
