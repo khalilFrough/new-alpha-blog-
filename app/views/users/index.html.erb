@@ -10,8 +10,13 @@
                 <li class="article-title"><%= link_to user.username, user_path(user)%></li>
                 <li> <small> <%= pluralize(user.articles.count, "article") if user.articles%></small></li>
                 <%=link_to "view profie", user, class: "btn btn-xs"%>
-                <%if logged_in? && user== current_user %>
-                    <%= link_to "edit profile", edit_user_path(user), class: "btn btn-xs btn-primary"%>
+                <%if logged_in?%>
+                    <% if user== current_user %>
+                        <%= link_to "edit profile", edit_user_path(user), class: "btn btn-xs btn-primary"%>
+                    <% end %>
+                    <%if current_user.admin?%>
+                    <%= link_to "Delete profile", user_path(user), class: "btn btn-xs btn-danger", method: :delete, data: {confirm: "Are you Sure you want to delete the user and all assocated Articles?"}%>
+                    <%end%>
                 <% end %>
             </div>
         </div>
