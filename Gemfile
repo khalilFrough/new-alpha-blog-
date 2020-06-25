@@ -48,7 +48,7 @@ group :development do
 end
 
 group :production do 
-  ge 'pg'
+  gem 'pg'
 end 
 
 group :test do
