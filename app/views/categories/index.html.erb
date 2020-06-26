@@ -1,0 +1,24 @@
+<h1 align="center">Showing All Categories!</h1>
+<div class="pagination-wrapper">
+    <%= will_paginate @categories%>
+</div>
+    <% @categories.each do |category|%>
+        <div class="row">
+        <div class="col-sm-4 offset-sm-3">
+            <div class="card">
+                <div class="article-title">
+                    <%=link_to category.name, category_path(category) %>
+                </div>
+            <div class="article-body">
+                    <small> 
+                    <%= time_ago_in_words(category.created_at)%> ago
+                    last updated: <%= time_ago_in_words(category.updated_at)%> ago
+                    </small>
+                </div>
+            </div>
+        </div>
+        </div>  
+    <% end %>
+<div class="pagination-wrapper">
+    <%= will_paginate @categories%>
+</div>
